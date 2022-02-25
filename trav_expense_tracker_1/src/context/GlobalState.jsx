@@ -22,7 +22,7 @@ export const GlobalProvider = ({ children }) => {
       {children}
     </GlobalContext.Provider>
   );
-};
+}; 
 
 // ? what the provider does is that it provides our state, any actions and stuff like that to the components. So, we need to wrap all of the components with the provider (Ex. GlobalContext.Provider). Props, children in this case, are all of the components inside the Provider such as Balance.jsx, IncomeExpenses.jsx, and so on.
 
