@@ -11,13 +11,11 @@
 </div>
 <div class="form-group mb-3">
   <label for="description">Description</label>
-    <textarea name="description" id="description" class="form-control">
-      <%= article.textarea %>
-    </textarea>
+  <textarea name="description" id="description" class="form-control"><%= article.description %></textarea>
 </div>
 <div class="form-group mb-3">
   <label for="markdown">Markdown</label>
-  <textarea required name="markdown" id="markdown" class="form-control"><%= article.markdown %></textarea>
+  <textarea required name="markdown" id="markdown" class="form-control"><%=article.markdown%></textarea>
 </div>
 
 <div class="btns pt-3">
