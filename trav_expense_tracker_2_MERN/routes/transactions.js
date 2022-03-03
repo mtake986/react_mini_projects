@@ -4,7 +4,7 @@ const {getTransactions, addTransaction, deleteTransaction} = require('../control
 
 router
   .route('/')
-  .get(getTransactions)
+  .get(getTransactions) 
   .post(addTransaction)
 
 router
