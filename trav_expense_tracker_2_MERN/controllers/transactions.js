@@ -1,7 +1,7 @@
 // @desc get all transactions 
 // @route GET /api/v1/transactionsRouter
 // @access Public
-exports.getTransaction = (req, res, next) => {
+exports.getTransactions = (req, res, next) => {
   res.send('get transaction')
 }
 
@@ -16,5 +16,6 @@ exports.addTransaction = (req, res, next) => {
 // @route DELETE /api/v1/transactionsRouter/:id
 // @access Public
 exports.deleteTransaction = (req, res, next) => {
-  res.send(`delete id is ${req.params.id}`)
+  // res.send(`delete id is ${req.params.id}`)
+  res.send('delete')
 } 
