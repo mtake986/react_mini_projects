@@ -1,11 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { GlobalContext } from '../context/GlobalState';
 import { Transaction } from './Transaction';
 
 const TransactionList = () => {
-  const { transactions } = useContext(GlobalContext);
-  console.log(transactions)
-  
+  const { transactions, getTransactions } = useContext(GlobalContext);
+  console.log(transactions);
+  useEffect(() => {
+    getTransactions();
+    
+  }, []);
   return (
     <div>
       <h3>History</h3>
