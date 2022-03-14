@@ -1,7 +1,7 @@
 import { signup, login, logout, useAuth } from './firebase';
 import { useRef, useState } from 'react';
 import './App.css';
-
+import Profile from './Profile';
 function App() {
   const currentUser = useAuth()
 
@@ -45,17 +45,30 @@ function App() {
     <div id="main">
 
       <h3>Currently Logged in as: {currentUser ? currentUser.email : "NO USER"} </h3>
-      <div id="fields">
-        <input ref={emailRef} placeholder="email"></input>
-        <input ref={passwordRef} type="password" placeholder="Password"></input>
-      </div>
 
-      <button disabled={loading || currentUser} onClick={handleSignUp}>Sign up</button>
-      <button disabled={loading || currentUser} onClick={handleLogIn}>Login</button>
+      {!currentUser &&
+        <>
+          <div id="fields">
+            <input ref={emailRef} placeholder="email"></input>
+            <input ref={passwordRef} type="password" placeholder="Password"></input>
+          </div>  
+    
+          <button disabled={loading} onClick={handleSignUp}>Sign up</button>
+          <button disabled={loading} onClick={handleLogIn}>Login</button>
+        </>
+      }
 
-      <button disabled={ loading || !currentUser} onClick={handleLogOut}>Log out</button>
+
+      {currentUser && 
+        <>
+          <button disabled={ loading || !currentUser} onClick={handleLogOut}>Log out</button>
+          <Profile />
+        </>
+      }
     </div>
   );
+
+
 }
 
 export default App;
